@@ -54,10 +54,8 @@ const screen = {
             } else if(event.type != "PushEvent" && event.type != "CreateEvent"){
                 eventItens +=
                 `<h4>Usuário não possui repositórios dos tipos <strong>'PushEvent'</strong> ou <strong>'createEvent'</strong>.</h4>`
-                console.log('Nada de eventos');
             }
         })
-        console.log(eventItens);
    
         if (user.events && user.events.length > 0) {
             this.userProfile.innerHTML += `
@@ -66,6 +64,14 @@ const screen = {
                 <ul>${eventItens}</ul>
             </div>`
         }
+    },
+
+    renderNotFound(){
+        this.userProfile.innerHTML = `<h3>Usuário não encontrado</h3>`
+    },
+
+    renderEmpty(){
+        this.userProfile.innerHTML = `<h3>Preencha o campo com o nome de usuário do GitHub</h3>`
     }
 }
 
