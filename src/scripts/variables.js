@@ -1,6 +1,6 @@
 const urlPrincipal = "https://api.github.com/users"
-const repositoriesQuantity = 10
+const Quantity = 10
 
 export {
-    urlPrincipal, repositoriesQuantity
+    urlPrincipal, Quantity
 }

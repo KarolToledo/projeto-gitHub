@@ -109,7 +109,8 @@ main {
 }
 
 .container .profile-data .seguidores{
-  background-color: rgb(224, 224, 252);
+  background-color: #1a2531e3;
+  color: antiquewhite;
   border-radius: 15px;
   padding: 10px;
   width: 150px;
@@ -153,7 +154,6 @@ h2, h3 {
 .container .profile-data .repositories ul li a{
   padding: 20px;
   text-align: center;
-  font-size: 0.8rem;
   border: 1px solid grey;  
   margin: 20px;
   display: block;
@@ -163,24 +163,28 @@ h2, h3 {
 
 .container .profile-data .repositories ul li a:hover{
   background-color:#081c31;
-  color: #fff
+  color: #fff;
+}
+
+.container .profile-data .repositories ul li .repo-dados{
+  display: flex;
+}
+
+.container .profile-data .repositories ul li .repo-dados li{
+  border: 1px solid grey;
+  padding: 5px;
+  margin: 2px;
+  margin-top: 10px;
 }
 
 .repositories.data{
   background-color: #1a2531e3;
   color: #fff;
-  font-size: 0.8rem;
-  padding: 10px;
-  border-radius: 15px;
-  margin: 15px;
-  max-width: 220px;
-  height: 270px;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.486);
-}
-
-.repo-dados li{
   padding: 5px;
-  width: 100%;
+  border-radius: 15px;
+  margin: 10px;
+  max-width: 250px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.486);
 }
 
 .container .profile-data .events{

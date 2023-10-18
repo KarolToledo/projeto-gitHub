@@ -9,8 +9,8 @@ const screen = {
                             <P>Bio: ${user.bio ?? '😥Não possui bio cadastrada'}</P>
                             <p>Login: ${user.userName ?? '😥Não possui login'}</p>
                             <div class="seguidores">
-                                <P>Following:⭐ ${user.seguindo}</P>  
-                                <P>Followers ✨${user.seguidores}</P>  
+                                <P>Following: 👁️ ${user.seguindo}</P>  
+                                <P>Followers: 💖 ${user.seguidores}</P>  
                             </div>
                         </div>
                         </div>`
@@ -21,19 +21,20 @@ const screen = {
             <li>
                 <div class="repositories data"> 
                     <a href="${repo.html_url}" target="_blank">${repo.name}
-                    </a>
                     <ul class="repo-dados">
-                        <li>Forks: ${repo.forks}</li>
-                        <li>🌟Stars: ${repo.stargazers_count
+                        <li>📋${repo.forks}</li>
+                        <li>⭐${repo.stargazers_count
                         }</li>
-                        <li>Watchers: ${repo.watchers}</li>
-                        <li>Language: ${repo.language}</li>
+                        <li>👀${repo.watchers}</li>
+                        <li>🤖${repo.language}</li>
                     </ul>
+                    </a>  
                 </div>
             </li>`)
 
         if (user.repositories.length > 0) {
-            this.userProfile.innerHTML += `<div class="repositories section">
+            this.userProfile.innerHTML += `
+            <div class="repositories section">
                 <h2>Repositórios</h2>
                 <ul>${repositoriesItens}</ul>
             </div>`
@@ -49,14 +50,14 @@ const screen = {
                             </li>`
             } else if (event.type === "CreateEvent") {
                 eventItens += ` <li>
-                                    <p><strong>${event.repo.name}</strong> - ${event.payload.ref_type }</p>
+                                    <p><strong>${event.repo.name}</strong> - ${event.payload.ref_type}</p>
                                 </li>`
-            } else if(event.type != "PushEvent" && event.type != "CreateEvent"){
+            } else if (event.type != "PushEvent" && event.type != "CreateEvent") {
                 eventItens +=
-                `<h4>Usuário não possui repositórios dos tipos <strong>'PushEvent'</strong> ou <strong>'createEvent'</strong>.</h4>`
+                    `<h4>Usuário não possui repositórios dos tipos <strong>'PushEvent'</strong> ou <strong>'createEvent'</strong>.</h4>`
             }
         })
-   
+
         if (user.events && user.events.length > 0) {
             this.userProfile.innerHTML += `
             <div class="events"> 
@@ -66,11 +67,11 @@ const screen = {
         }
     },
 
-    renderNotFound(){
+    renderNotFound() {
         this.userProfile.innerHTML = `<h3>Usuário não encontrado</h3>`
     },
 
-    renderEmpty(){
+    renderEmpty() {
         this.userProfile.innerHTML = `<h3>Preencha o campo com o nome de usuário do GitHub</h3>`
     }
 }
